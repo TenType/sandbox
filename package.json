@@ -1,0 +1,18 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "Test project",
+  "main": "dist/index.js",
+  "scripts": {
+    "deploy": "node confirm.js Are you sure you want to deploy changes? && git checkout deploy && git merge github --rebase && git push && git checkout github && git push",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "author": "TenType",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "husky": "^7.0.4",
+    "typescript": "^4.5.5"
+  }
+}
