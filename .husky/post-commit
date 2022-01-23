@@ -14,11 +14,13 @@ try {
 
 execSync('git checkout deploy');
 const commitFiles = execSync(`git diff-tree --no-commit-id --name-only -r ${commit}`).toString().split('\n');
+
+// cherry pick main -> deploy
 if (commitFiles.some(item => excludePick.includes(item))) {
-	// disallow cherry pick if the files in branches should be different 
+	// manual cherry pick if the files in branches should be different 
 	execSync(`git cherry-pick -S --allow-empty -X theirs -n ${commit} `);
 	process.exit(0);
-} else {
-	execSync(`git cherry-pick -S --allow-empty -X theirs ${commit} `);
 }
+
+execSync(`git cherry-pick -S --allow-empty -X theirs ${commit} `);
 execSync('git checkout main');
