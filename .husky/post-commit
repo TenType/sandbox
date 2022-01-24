@@ -17,11 +17,13 @@ commitFiles=( $(git diff-tree --no-commit-id --name-only -r $commit) )
 echo "files: $commitFiles"
 
 # load excluded files
-excludeFiles=$(cat cherryignore.json)
+excludeFiles=$(cat cherryignore.txt)
+echo "exclude: $excludeFiles"
 
 # if excluded file in commit, manually cherry pick instead
 for a in ${excludeFiles[@]}; do
 	for b in ${commitFiles[@]}; do
+		echo "checking $a against $b"
 		if [[ $a == $b ]]; then
 			git cherry-pick -S --allow-empty -X theirs -n $commit
 			echo "Manually cherry picking"
