@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "starting post-commit..."
+echo "POST-COMMIT > starting post-commit..."
 
 # load commit sha
 commit=$(git rev-parse --short HEAD)
@@ -8,25 +8,23 @@ commit=$(git rev-parse --short HEAD)
 # only continue if in branch main
 git log main | grep $commit || exit 0
 
-echo "switching branches..."
 git checkout deploy
 
 # load committed files and split by newline
 IFS=$'\n'
 commitFiles=( $(git diff-tree --no-commit-id --name-only -r $commit) )
-echo "files: $commitFiles"
+echo "POST-COMMIT > files: $commitFiles"
 
 # load excluded files
 excludeFiles=$(cat cherryignore.txt)
-echo "exclude: $excludeFiles"
+echo "POST-COMMIT > exclude: $excludeFiles"
 
 # if excluded file in commit, manually cherry pick instead
 for a in ${excludeFiles[@]}; do
 	for b in ${commitFiles[@]}; do
-		echo "checking $a against $b"
 		if [[ $a == $b ]]; then
 			git cherry-pick -S --allow-empty -X theirs -n $commit
-			echo "Manually cherry picking"
+			echo "POST-COMMIT > detected excluded file, manually cherry picking"
 			exit 0
 		fi
 	done
@@ -34,5 +32,5 @@ done
 
 # auto cherry pick
 git cherry-pick -S --allow-empty -X theirs $commit
-echo "finished"
+echo "POST-COMMIT > finished cherry picking"
 git checkout main
