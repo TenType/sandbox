@@ -1,26 +1,36 @@
-#!/usr/bin/env node
-// Post-commit cherry pick
+#!/bin/sh
 
-const { execSync } = require('child_process');
-const excludePick = require('../cherryignore.json');
-const commit = execSync('git rev-parse --short HEAD');
+echo "starting post-commit..."
 
-// only cherry pick if commit was in main
-try {
-	execSync(`git log main | grep ${commit}`);
-} catch {
-	process.exit(0);
-}
+# load commit sha
+commit=$(git rev-parse --short HEAD)
 
-execSync('git checkout deploy');
-const commitFiles = execSync(`git diff-tree --no-commit-id --name-only -r ${commit}`).toString().split('\n');
+# only continue if in branch main
+git log main | grep $commit || exit 0
 
-// cherry pick main -> deploy
-if (commitFiles.some(item => excludePick.includes(item))) {
-	// manual cherry pick if the files in branches should be different 
-	execSync(`git cherry-pick -S --allow-empty -X theirs -n ${commit} `);
-	process.exit(0);
-}
+echo "switching branches..."
+git checkout deploy
 
-execSync(`git cherry-pick -S --allow-empty -X theirs ${commit} `);
-execSync('git checkout main');
+# load committed files and split by newline
+IFS=$'\n'
+commitFiles=( $(git diff-tree --no-commit-id --name-only -r $commit) )
+echo "files: $commitFiles"
+
+# load excluded files
+excludeFiles=$(cat cherryignore.json)
+
+# if excluded file in commit, manually cherry pick instead
+for a in ${excludeFiles[@]}; do
+	for b in ${commitFiles[@]}; do
+		if [[ $a == $b ]]; then
+			git cherry-pick -S --allow-empty -X theirs -n $commit
+			echo "Manually cherry picking"
+			exit 0
+		fi
+	done
+done
+
+# auto cherry pick
+git cherry-pick -S --allow-empty -X theirs $commit
+echo "finished"
+git checkout main
