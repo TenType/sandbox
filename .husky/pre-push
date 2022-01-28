@@ -1,0 +1,25 @@
+# #!/bin/sh
+
+# ***************************************************************************
+# STDIN input from git is currently not supported by Husky.
+# ***************************************************************************
+
+# branch=$(git branch --show-current)
+# echo "PRE-PUSH > $1"
+# echo "PRE-PUSH > $2"
+
+# while read local_ref local_oid remote_ref remote_oid; do
+# 	echo "PRE-PUSH > local: $local_ref"
+# 	echo "PRE-PUSH > remote: $remote_ref"
+
+# 	if [[ "$local_ref" == 'refs/heads/main' && "$remote_ref" == 'refs/heads/main' && "$1" == 'github' ]]; then
+# 		echo "PRE-PUSH > Pushing from main -> github"
+# 	elif [[ "$local_ref" == 'refs/heads/deploy' && "$remote_ref" == 'refs/heads/main' && "$1" == 'deploy' ]]; then
+# 		echo "PRE-PUSH > Pushing from deploy:main -> deploy"
+# 	else
+# 		echo "PRE-PUSH > Possible incorrect branch pushing detected, aborting"
+# 		exit 1
+# 	fi
+
+# done
+# exit 0
