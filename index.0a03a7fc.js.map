@@ -1,1 +1,0 @@
-{"mappings":"AAAAA,OAAOC,iBAAiB,WAAS,KAChCC,MAAM","sources":["src/index.ts"],"sourcesContent":["window.addEventListener('onclick', () => {\n\talert('Hello world!');\n});"],"names":["window","addEventListener","alert"],"version":3,"file":"index.0a03a7fc.js.map"}
