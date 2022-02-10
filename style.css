@@ -1,0 +1,20 @@
+:root {
+	--theme-blue: #0c73d2;
+}
+html {
+	background-color: var(--theme-blue);
+}
+em {
+	color: red;
+	font-style: normal;
+}
+.topic {
+	color: white;
+	text-align: center;
+	font-size: 10vw;
+}
+
+p {
+	color: white;
+	text-align: center;
+}
