@@ -1,9 +1,11 @@
-fn main() {
-	say_hello();
-	let mut input = String::new();
-	std::io::stdin().read_line(&mut input).expect("Did not enter a correct string");
+use std::io::{stdin};
 
-	let arg = match input.as_str() {
+pub fn get_input() {
+	let mut input = String::new();
+	stdin().read_line(&mut input).expect("Did not enter a correct string");
+	println!("You entered {input}");
+
+	let arg = match input.trim_end() {
 		"true" => true,
 		"false" => false,
 		_ => {
@@ -19,19 +21,14 @@ fn main() {
 	}
 }
 
-fn say_hello() -> i8 {
-	println!("Hello!");
-	1
-}
-
-fn block<'a>(mode: bool) -> Result<(), &'a str> {
+fn block(mode: bool) -> Result<(), &'static str> {
 	let res = statement(mode)?;
 
 	println!("success: {}", res);
 	Ok(())
 }
 
-fn statement<'a>(mode: bool) -> Result<&'a str, &'a str> {
+fn statement(mode: bool) -> Result<&'static str, &'static str> {
 	if mode {
 		Ok("good")
 	} else {

@@ -3,7 +3,7 @@
 		"target": "esnext",
 		"module": "CommonJS",
 		"sourceMap": true,
-		"rootDir": "src",
+		"rootDir": "src/typescript",
 		"outDir": "dist",
 		"esModuleInterop": true,
 		"noEmitOnError": true,
