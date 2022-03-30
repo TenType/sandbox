@@ -1,9 +1,9 @@
 pub fn run() {
-	println!("Hello from an exported file!");
+    println!("Hello from an exported file!");
 
-	let test = 2;
+    let test = 2;
 
-	let result = format!("test is {test}");
+    let result = format!("test is {test}");
 
-	println!("{test} {result}");
+    println!("{test} {result}");
 }

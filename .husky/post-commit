@@ -21,13 +21,13 @@ echo "POST-COMMIT > exclude: $excludeFiles"
 
 # if excluded file in commit, manually cherry pick instead
 for a in ${excludeFiles[@]}; do
-	for b in ${commitFiles[@]}; do
-		if [[ $a == $b ]]; then
-			git cherry-pick -S --allow-empty -X theirs -n $commit
-			echo "POST-COMMIT > detected excluded file, manually cherry picking"
-			exit 0
-		fi
-	done
+    for b in ${commitFiles[@]}; do
+        if [[ $a == $b ]]; then
+            git cherry-pick -S --allow-empty -X theirs -n $commit
+            echo "POST-COMMIT > detected excluded file, manually cherry picking"
+            exit 0
+        fi
+    done
 done
 
 # auto cherry pick
