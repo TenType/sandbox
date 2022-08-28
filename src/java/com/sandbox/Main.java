@@ -1,7 +1,21 @@
+package com.sandbox;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world");
         System.out.println(fibonnaci(9));
+
+        int[] nums = {3, 6, 1, 0, 1, 4, 2};
+        System.out.println(mystery(nums));
+    }
+
+    public static int mystery(int[] arr) {
+        int x = 0;
+
+        for (int k = 0; k < arr.length; k = k + 2)
+            x = x + arr[k];
+
+        return x;
     }
 
     public static int fibonnaci(int num) {
