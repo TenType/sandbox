@@ -10,9 +10,9 @@ git log main | grep $commit || exit 0
 
 git checkout deploy
 
-# load committed files and split by newline
+# load committed files and split by commas
 IFS=$'\n'
-commitFiles=( $(git diff-tree --no-commit-id --name-only -r $commit) )
+commitFiles=$(git diff-tree --no-commit-id --name-only -r $commit)
 echo "POST-COMMIT > files: $commitFiles"
 
 # load excluded files
@@ -23,14 +23,19 @@ echo "POST-COMMIT > exclude: $excludeFiles"
 for a in ${excludeFiles[@]}; do
     for b in ${commitFiles[@]}; do
         if [[ $a == $b ]]; then
-            git cherry-pick -S --allow-empty -X theirs -n $commit
+            git cherry-pick -S -X theirs -n $commit
             echo "POST-COMMIT > detected excluded file, manually cherry picking"
+    
+            # warn the user with a file
+            branch=$(git rev-parse --abbrev-ref HEAD)
+            echo "WARNING: Detected excluded file $a: switched to manual cherry picking mode\nOn branch: $branch\n\n==================== COMMITED FILES ====================\n$commitFiles\n\n ==================== EXCLUDED FILES ====================\n$excludeFiles\n\nBe sure to switch back to the main branch after you are finished with your changes." > warning.tmp
+            code -w warning.tmp
             exit 0
         fi
     done
 done
 
 # auto cherry pick
-git cherry-pick -S --allow-empty -X theirs $commit
+git cherry-pick -S -X theirs $commit
 echo "POST-COMMIT > finished cherry picking"
 git checkout main

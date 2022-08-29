@@ -1,0 +1,250 @@
+{
+  "52WeekChange": null,
+  "SandP52WeekChange": null,
+  "algorithm": null,
+  "annualHoldingsTurnover": null,
+  "annualReportExpenseRatio": null,
+  "ask": 403.92,
+  "askSize": 1800,
+  "averageDailyVolume10Day": 62367550,
+  "averageVolume": 75938288,
+  "averageVolume10days": 62367550,
+  "beta": null,
+  "beta3Year": 1,
+  "bid": 403.8,
+  "bidSize": 1000,
+  "bondHoldings": {
+    "creditQuality": null,
+    "creditQualityCat": null,
+    "duration": null,
+    "durationCat": null,
+    "maturity": null,
+    "maturityCat": null
+  },
+  "bondPosition": 0,
+  "bondRatings": [
+    {
+      "bb": 0
+    },
+    {
+      "aa": 0
+    },
+    {
+      "aaa": 0
+    },
+    {
+      "a": 0
+    },
+    {
+      "other": 0
+    },
+    {
+      "b": 0
+    },
+    {
+      "bbb": 0
+    },
+    {
+      "below_b": 0
+    },
+    {
+      "us_government": 0
+    }
+  ],
+  "bookValue": null,
+  "cashPosition": null,
+  "category": "Large Blend",
+  "circulatingSupply": null,
+  "coinMarketCapLink": null,
+  "companyOfficers": [],
+  "convertiblePosition": null,
+  "currency": "USD",
+  "dayHigh": 419.94,
+  "dayLow": 405.25,
+  "dividendRate": null,
+  "dividendYield": null,
+  "earningsQuarterlyGrowth": null,
+  "enterpriseToEbitda": null,
+  "enterpriseToRevenue": null,
+  "enterpriseValue": null,
+  "equityHoldings": {
+    "medianMarketCap": null,
+    "medianMarketCapCat": null,
+    "priceToBook": 4.42,
+    "priceToBookCat": null,
+    "priceToCashflow": 17.56,
+    "priceToCashflowCat": null,
+    "priceToEarnings": 18.43,
+    "priceToEarningsCat": null,
+    "priceToSales": 2.96,
+    "priceToSalesCat": null,
+    "threeYearEarningsGrowth": null,
+    "threeYearEarningsGrowthCat": null
+  },
+  "exDividendDate": null,
+  "exchange": "PCX",
+  "exchangeTimezoneName": "America/New_York",
+  "exchangeTimezoneShortName": "EDT",
+  "expireDate": null,
+  "fiftyDayAverage": 398.5636,
+  "fiftyTwoWeekHigh": 479.98,
+  "fiftyTwoWeekLow": 362.17,
+  "fiveYearAverageReturn": 0.13350001,
+  "fiveYearAvgDividendYield": null,
+  "forwardEps": null,
+  "forwardPE": null,
+  "fromCurrency": null,
+  "fundFamily": "SPDR State Street Global Advisors",
+  "fundInceptionDate": 727660800,
+  "gmtOffSetMilliseconds": "-14400000",
+  "holdings": [
+    {
+      "holdingName": "Apple Inc",
+      "holdingPercent": 0.059,
+      "symbol": "AAPL"
+    },
+    {
+      "holdingName": "Microsoft Corp",
+      "holdingPercent": 0.055999998,
+      "symbol": "MSFT"
+    },
+    {
+      "holdingName": "Amazon.com Inc",
+      "holdingPercent": 0.0405,
+      "symbol": "AMZN"
+    },
+    {
+      "holdingName": "Facebook Inc A",
+      "holdingPercent": 0.0229,
+      "symbol": "FB"
+    },
+    {
+      "holdingName": "Alphabet Inc A",
+      "holdingPercent": 0.0202,
+      "symbol": "GOOGL"
+    },
+    {
+      "holdingName": "Alphabet Inc Class C",
+      "holdingPercent": 0.0196,
+      "symbol": "GOOG"
+    },
+    {
+      "holdingName": "Berkshire Hathaway Inc Class B",
+      "holdingPercent": 0.0145000005,
+      "symbol": "BRK.B"
+    },
+    {
+      "holdingName": "Tesla Inc",
+      "holdingPercent": 0.014400001,
+      "symbol": "TSLA"
+    },
+    {
+      "holdingName": "NVIDIA Corp",
+      "holdingPercent": 0.0137,
+      "symbol": "NVDA"
+    },
+    {
+      "holdingName": "JPMorgan Chase & Co",
+      "holdingPercent": 0.0128999995,
+      "symbol": "JPM"
+    }
+  ],
+  "isEsgPopulated": false,
+  "lastCapGain": null,
+  "lastDividendDate": null,
+  "lastDividendValue": null,
+  "lastFiscalYearEnd": null,
+  "lastMarket": null,
+  "lastSplitDate": null,
+  "lastSplitFactor": null,
+  "legalType": "Exchange Traded Fund",
+  "logo_url": "",
+  "longBusinessSummary": "The Trust seeks to achieve its investment objective by holding a portfolio of the common stocks that are included in the index (the \u201cPortfolio\u201d), with the weight of each stock in the Portfolio substantially corresponding to the weight of such stock in the index.",
+  "longName": "SPDR S&P 500 ETF Trust",
+  "market": "us_market",
+  "marketCap": null,
+  "maxAge": 1,
+  "maxSupply": null,
+  "messageBoardId": "finmb_6160262",
+  "morningStarOverallRating": null,
+  "morningStarRiskRating": null,
+  "mostRecentQuarter": null,
+  "navPrice": 405.24,
+  "netIncomeToCommon": null,
+  "nextFiscalYearEnd": null,
+  "open": 419.39,
+  "openInterest": null,
+  "otherPosition": null,
+  "payoutRatio": null,
+  "pegRatio": null,
+  "phone": "NA",
+  "preMarketPrice": null,
+  "preferredPosition": null,
+  "previousClose": 419.51,
+  "priceHint": 2,
+  "priceToBook": null,
+  "priceToSalesTrailing12Months": null,
+  "profitMargins": null,
+  "quoteType": "ETF",
+  "regularMarketDayHigh": 419.94,
+  "regularMarketDayLow": 405.25,
+  "regularMarketOpen": 419.39,
+  "regularMarketPreviousClose": 419.51,
+  "regularMarketPrice": 405.31,
+  "regularMarketVolume": 103086976,
+  "revenueQuarterlyGrowth": null,
+  "sectorWeightings": [
+    {
+      "realestate": 0.028900001
+    },
+    {
+      "consumer_cyclical": 0.11270001
+    },
+    {
+      "basic_materials": 0.0222
+    },
+    {
+      "consumer_defensive": 0.070199996
+    },
+    {
+      "technology": 0.2525
+    },
+    {
+      "communication_services": 0.0841
+    },
+    {
+      "financial_services": 0.128
+    },
+    {
+      "utilities": 0.024500001
+    },
+    {
+      "industrials": 0.083500005
+    },
+    {
+      "energy": 0.0437
+    },
+    {
+      "healthcare": 0.1439
+    }
+  ],
+  "shortName": "SPDR S&P 500",
+  "startDate": null,
+  "stockPosition": 0.9997,
+  "strikePrice": null,
+  "symbol": "SPY",
+  "threeYearAverageReturn": 0.1565,
+  "toCurrency": null,
+  "totalAssets": 373176041472,
+  "tradeable": false,
+  "trailingAnnualDividendRate": 5.662,
+  "trailingAnnualDividendYield": 0.013496699,
+  "trailingEps": null,
+  "trailingPE": 21.991861,
+  "twoHundredDayAverage": 429.6828,
+  "volume": 103086976,
+  "volume24Hr": null,
+  "volumeAllCurrencies": null,
+  "yield": 0.0146,
+  "ytdReturn": null
+}
