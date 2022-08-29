@@ -10,7 +10,7 @@ git log main | grep $commit || exit 0
 
 git checkout deploy
 
-# load committed files and split by commas
+# load committed files and split by newline
 IFS=$'\n'
 commitFiles=$(git diff-tree --no-commit-id --name-only -r $commit)
 echo "POST-COMMIT > files: $commitFiles"
@@ -28,7 +28,7 @@ for a in ${excludeFiles[@]}; do
     
             # warn the user with a file
             branch=$(git rev-parse --abbrev-ref HEAD)
-            echo "WARNING: Detected excluded file $a: switched to manual cherry picking mode\nOn branch: $branch\n\n==================== COMMITED FILES ====================\n$commitFiles\n\n ==================== EXCLUDED FILES ====================\n$excludeFiles\n\nBe sure to switch back to the main branch after you are finished with your changes." > warning.tmp
+            echo "WARNING: Detected excluded file '$a'\nSwitched to manual cherry picking mode on branch '$branch'\n\n==================== COMMITED FILES ====================\n$commitFiles\n\n ==================== EXCLUDED FILES ====================\n$excludeFiles\n\nBe sure to switch back to the main branch after you are finished with your changes." > warning.tmp
             code -w warning.tmp
             exit 0
         fi
