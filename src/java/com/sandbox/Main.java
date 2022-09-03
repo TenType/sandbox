@@ -3,7 +3,7 @@ package com.sandbox;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world");
-        System.out.println(fibonnaci(9));
+        System.out.println(fibonacci(9));
 
         int[] nums = {3, 6, 1, 0, 1, 4, 2};
         System.out.println(mystery(nums));
@@ -18,7 +18,7 @@ public class Main {
         return x;
     }
 
-    public static int fibonnaci(int num) {
+    public static int fibonacci(int num) {
         if (num <= 0) return 0;
         if (num <= 2) return num - 1;
 
