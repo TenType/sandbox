@@ -4,10 +4,10 @@
   "description": "Test project",
   "main": "dist/tertiary.js",
   "scripts": {
-	"start": "tsc && node .",
-	"lint": "eslint --ext ts,tsx .",
-	"test": "echo \"Error: no test specified\" && exit 1",
-	"prepare": "husky install"
+    "start": "tsc && node .",
+    "lint": "eslint --ext ts,tsx .",
+    "test": "jest",
+    "prepare": "husky install"
   },
   "author": "TenType",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.7.0",
     "husky": "^7.0.4",
+    "jest": "^29.0.1",
     "typescript": "^4.5.5"
   }
 }
